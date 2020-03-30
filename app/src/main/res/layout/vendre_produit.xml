@@ -1,33 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VendreProduit"
-    android:orientation="vertical">
+    android:padding="@dimen/padding_fenetre"
+    android:stretchColumns="0,1,2"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="VENDRE UN PRODUIT"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginVertical="@dimen/marge_verticale"/>
+    <TableRow android:layout_marginBottom="@dimen/ecart_entete">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="@dimen/marge_horizontale"
-        android:layout_marginVertical="@dimen/marge_verticale">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/taille_titre"
+            android:textAlignment="center"
+            android:layout_span="3"
+            android:text="VENDRE PRODUIT" />
+    </TableRow>
+    <TableRow>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/texte_produit" />
 
         <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2">
+
         </Spinner>
-    </LinearLayout>
-</LinearLayout>
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texte_client" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2">
+        </Spinner>
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texte_quantite" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2">
+        </Spinner>
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/texte_total" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2">
+        </Spinner>
+
+    </TableRow>
+    <TableRow>
+        <CheckBox android:id="@+id/checkbox_choix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_span="2"
+            android:text="@string/texte_ajout_credit"
+            android:onClick="onCheckboxClicked"/>
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/btnAnnuler"
+            android:onClick="clickAnnuler"
+            android:layout_column="1"
+            android:text="@string/texte_btn_annuler" />
+        <Button
+            android:id="@+id/btnVendre"
+            android:onClick="clickVendre"
+            android:layout_column="2"
+            android:text="@string/texte_btn_vendre" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/btnCalculatrice"
+            android:onClick="clickCalculatrice"
+            android:text="@string/texte_btn_calculatrice"
+            android:layout_span="3"/>
+    </TableRow>
+</TableLayout>

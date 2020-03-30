@@ -1,15 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Toolbar -->
-    <dimen name="elevation">4dp</dimen>
-    <dimen name="taille_titre">16sp</dimen>
-    <dimen name="marge_horizontale">10dp</dimen>
-    <dimen name="marge_verticale">5dp</dimen>
-
-    <!-- Bordure -->
-    <dimen name="border_width_rectangle">1dp</dimen>
-    <dimen name="dash_gap_width">10dp</dimen>
-    <dimen name="dash_width">10dp</dimen>
-
-    <!-- Activité principale -->
-
+    <dimen name="padding_fenetre">16dp</dimen>
+    <dimen name="marge_centrale">16dp</dimen>
+    <dimen name="ecart_entete">32dp</dimen>
+    <dimen name="taille_titre">20sp</dimen>
 </resources>

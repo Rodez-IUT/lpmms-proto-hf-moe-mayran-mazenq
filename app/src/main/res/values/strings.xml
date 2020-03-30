@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">PstttTuVeuxUnTwix</string>
     <string name="texte_produit">Produit : </string>
+    <string name="texte_client">Client : </string>
+    <string name="texte_quantite">Quantité : </string>
+    <string name="texte_total">Total : </string>
+    <string name="texte_ajout_credit">Ajouter Crédit</string>
+    <string name="texte_btn_annuler">Annuler : </string>
+    <string name="texte_btn_vendre">Vendre : </string>
+    <string name="texte_btn_calculatrice">CALCULATRICE : </string>
 </resources>
