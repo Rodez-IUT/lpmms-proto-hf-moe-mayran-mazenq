@@ -26,6 +26,7 @@
             android:text="@string/texte_produit" />
 
         <Spinner
+            android:id="@+id/spinner_friandise"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_span="2">
@@ -41,6 +42,7 @@
             android:text="@string/texte_client" />
 
         <Spinner
+            android:id="@+id/spinner_client"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_span="2">
@@ -55,6 +57,7 @@
             android:text="@string/texte_quantite" />
 
         <Spinner
+            android:id="@+id/spinner_quantite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_span="2">
@@ -68,11 +71,13 @@
             android:layout_height="wrap_content"
             android:text="@string/texte_total" />
 
-        <Spinner
+        <EditText
+            android:focusable="false"
+            android:id="@+id/edit_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_span="2">
-        </Spinner>
+        </EditText>
 
     </TableRow>
     <TableRow>

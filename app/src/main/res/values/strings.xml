@@ -8,4 +8,60 @@
     <string name="texte_btn_annuler">Annuler : </string>
     <string name="texte_btn_vendre">Vendre : </string>
     <string name="texte_btn_calculatrice">CALCULATRICE : </string>
+    <string name="messageToastErreurSaisieVendreProduit">Veuillez entrer un produit, un client et une quantité avant de valider</string>
+
+    <!-- Liste des types de friandises -->
+    <string-array name="Friandises">
+        <item>"Twix"</item>
+        <item>"Kit Kat"</item>
+        <item>"Kinder Bueno"</item>
+        <item>"Mars"</item>
+        <item>"Lion"</item>
+    </string-array>
+
+    <!-- Liste des clients -->
+    <string-array name="Clients">
+        <item>"Robert De Niro"</item>
+        <item>"Al Pacino"</item>
+        <item>"Clint Eastwood"</item>
+        <item>"David Fincher"</item>
+        <item>"Martin Scorsese"</item>
+        <item>"Sergio Leone"</item>
+        <item>"bong joon ho"</item>
+        <item>"park chan wook"</item>
+        <item>"kim jee woon"</item>
+        <item>"John Woo"</item>
+        <item>"Steven Spielberg"</item>
+        <item>"Quentin Tarantino"</item>
+        <item>"Michael Mann"</item>
+        <item>"Brian De Palma"</item>
+        <item>"James Cameron"</item>
+        <item>"Damien Chazelle"</item>
+        <item>"edgar wright"</item>
+        <item>"Terrence Malick"</item>
+        <item>"Francis Ford Coppola"</item>
+        <item>"Christopher Nolan"</item>
+        <item>"Guy Ritchie"</item>
+        <item>"Francis Ford Coppola"</item>
+        <item>"Ridley Scott"</item>
+        <item>"Sam Raimi"</item>
+        <item>"Stanley Kubrick"</item>
+        <item>"Sam Mendes"</item>
+    </string-array>
+
+    <!-- Liste des quantités -->
+    <string-array name="Quantite">
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+        <item>"6"</item>
+        <item>"7"</item>
+        <item>"8"</item>
+        <item>"9"</item>
+        <item>"10"</item>
+    </string-array>
+
 </resources>
+
