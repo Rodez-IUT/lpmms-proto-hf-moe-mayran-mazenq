@@ -86,8 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_span="2"
-            android:text="@string/texte_ajout_credit"
-            android:onClick="onCheckboxClicked"/>
+            android:text="@string/texte_ajout_credit"/>
     </TableRow>
     <TableRow>
         <Button
@@ -104,7 +103,6 @@
     <TableRow>
         <Button
             android:id="@+id/btnCalculatrice"
-            android:onClick="clickCalculatrice"
             android:text="@string/texte_btn_calculatrice"
             android:layout_span="3"/>
     </TableRow>

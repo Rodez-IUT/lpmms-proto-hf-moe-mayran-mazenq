@@ -5,10 +5,11 @@
     <string name="texte_quantite">Quantité : </string>
     <string name="texte_total">Total : </string>
     <string name="texte_ajout_credit">Ajouter Crédit</string>
-    <string name="texte_btn_annuler">Annuler : </string>
-    <string name="texte_btn_vendre">Vendre : </string>
-    <string name="texte_btn_calculatrice">CALCULATRICE : </string>
+    <string name="texte_btn_annuler">Annuler</string>
+    <string name="texte_btn_vendre">Vendre</string>
+    <string name="texte_btn_calculatrice">CALCULATRICE</string>
     <string name="messageToastErreurSaisieVendreProduit">Veuillez entrer un produit, un client et une quantité avant de valider</string>
+    <string name="messageToastVenteSucces">Vente effectuée avec succès</string>
 
     <!-- Liste des types de friandises -->
     <string-array name="Friandises">

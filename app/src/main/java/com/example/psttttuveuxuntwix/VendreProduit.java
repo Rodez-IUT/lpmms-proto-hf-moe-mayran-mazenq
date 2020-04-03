@@ -4,16 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.*;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class VendreProduit extends AppCompatActivity {
+
+    public final static String CLE_PRIX_TOTAL = "android.com.example.jeumemorisation.CLE_PRIX_TOTAL";
 
     /**
      * Type de friandise
@@ -39,6 +38,11 @@ public class VendreProduit extends AppCompatActivity {
     private EditText editTextTotal;
 
     /**
+     * Checkbox crédit
+     */
+    private CheckBox cbCredit;
+
+    /**
      * Constante contenant le prix des friandises
      */
     public final int PRIX_TWIX = 1;
@@ -60,9 +64,10 @@ public class VendreProduit extends AppCompatActivity {
 
         /* On initialise les attributs */
         spinnerFriandise = (Spinner) findViewById(R.id.spinner_friandise);
-        spinnerClient = (Spinner) findViewById(R.id.spinner_friandise);
-        spinnerQuantite = (Spinner) findViewById(R.id.spinner_friandise);
+        spinnerClient = (Spinner) findViewById(R.id.spinner_client);
+        spinnerQuantite = (Spinner) findViewById(R.id.spinner_quantite);
         editTextTotal = (EditText) findViewById(R.id.edit_total);
+        cbCredit = (CheckBox) findViewById(R.id.checkbox_choix);
 
         /* On initialise le spinner des friandises */
         adapdateurFriandise = new ArrayAdapter<String>(this,
@@ -81,9 +86,38 @@ public class VendreProduit extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.Quantite));
         adapdateurQuantite.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerQuantite.setAdapter(adapdateurQuantite);
+
+        spinnerFriandise.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int arg2, long arg3) {
+                calculerPrix();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
+        spinnerQuantite.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int arg2, long arg3) {
+                calculerPrix();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
+        spinnerClient.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int arg2, long arg3) {
+                calculerPrix();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
+
     }
 
-    public void btnAnnuler(View v) {
+    public void clickAnnuler(View v) {
 
         // on envoie une intention de retour à l'activité principale
         Intent intentionRetour = new Intent();
@@ -91,8 +125,21 @@ public class VendreProduit extends AppCompatActivity {
         finish();
     }
 
-    public void btnValider(View v) {
+    public void clickVendre(View v) {
+        if (cbCredit.isChecked()){
+            // On ne fait rien car c'est une maquette. Sinon on doit ajouté le crédit au client
+            Toast.makeText(VendreProduit.this, R.string.messageToastVenteSucces, Toast.LENGTH_LONG).show();
+            clickAnnuler(v);
+        } else {
+            Intent intentionRetour = new Intent();
+            intentionRetour.putExtra(CLE_PRIX_TOTAL,prixTotal);
+            setResult(Activity.RESULT_OK,intentionRetour);
+            Toast.makeText(VendreProduit.this, R.string.messageToastVenteSucces, Toast.LENGTH_LONG).show();
+            finish();
+        }
+    }
 
+    private int calculerPrix () {
         String ProduitSelectionne;
         String ClientSelectionne;
         int quantiteSelectionne;
@@ -125,12 +172,10 @@ public class VendreProduit extends AppCompatActivity {
             }
         }else{
             // On affiche un toast
-            Toast.makeText(getApplicationContext(), R.string.messageToastErreurSaisieVendreProduit, Toast.LENGTH_SHORT).show();
+            Toast.makeText(VendreProduit.this, R.string.messageToastErreurSaisieVendreProduit, Toast.LENGTH_SHORT).show();
         }
-
         // On affecte le prix total à l'edit text
         editTextTotal.setText(Integer.toString(prixTotal));
-
+        return prixTotal;
     }
-
 }

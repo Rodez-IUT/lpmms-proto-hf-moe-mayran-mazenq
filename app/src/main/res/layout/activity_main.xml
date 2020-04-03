@@ -13,7 +13,7 @@
         android:padding="12dp"
         android:width="200dp"
         android:height="200dp"
-        android:text="51,00 €"
+        android:textSize="30sp"
         android:background="@drawable/bouton_rond"
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
